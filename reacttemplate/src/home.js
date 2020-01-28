@@ -5,7 +5,7 @@ function home(props) {
 
     return (
         <div>
-            <h4>Home Page</h4>
+            <h3>Home Page</h3>
         </div>
     )
 }

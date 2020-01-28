@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Home from './home'
 import About from './about'
 import NavBar from './navbar'
 import Main from './main'
+import FourZeroFour from './fourzerofour';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/about"><About /></Route>
         <Route path="/main"><Main /></Route>
         <Route exact path="/"><Home /></Route>
+        <Route path="*"><FourZeroFour /></Route>
       </Switch>
    </div>
   );
