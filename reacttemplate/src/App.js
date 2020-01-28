@@ -2,14 +2,14 @@ import React from "react";
 import "./App.css";
 import { Switch, Route, useLocation } from "react-router-dom";
 import { useTransition, animated, config } from "react-spring";
-import Home from "./Home";
-import About from "./About";
-import NavBar from "./NavBar";
-import Main from "./Main";
-import FourZeroFour from "./FourZeroFour";
+import Home from "./home";
+import About from "./about";
+import NavBar from "./navbar";
+import Main from "./main";
+import FourZeroFour from "./fourzerofour";
 
 function App() {
-  //Route Transitions with spring-react
+  //Route Transitions with spring-react hooks
   const location = useLocation();
   const transitions = useTransition(location, location => location.pathname, {
     config: config.slow,
@@ -23,7 +23,7 @@ function App() {
       <h3 className="appTemplateTitle">React Template</h3>
 
       <NavBar />
-      
+
       {transitions.map(({ item, props, key }) => (
         <animated.div key={key} style={props}>
           <Switch location={item}>
