@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
-function navbar(props) {
+function NavBar(props) {
 
     return (
         <div>
@@ -17,5 +17,5 @@ function navbar(props) {
 
 // navbar.propTypes = {}
 
-export default navbar
+export default NavBar
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function home(props) {
+function Home(props) {
 
     return (
         <div>
@@ -12,5 +12,5 @@ function home(props) {
 
 // home.propTypes = {}
 
-export default home
+export default Home
 

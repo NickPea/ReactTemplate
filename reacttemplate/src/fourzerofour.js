@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function fourzerofour(props) {
+function FourZeroFour(props) {
 
     return (
         <div>
@@ -12,5 +12,5 @@ function fourzerofour(props) {
 
 // fourzerofour.propTypes = {}
 
-export default fourzerofour
+export default FourZeroFour
 

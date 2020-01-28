@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function about(props) {
+function About(props) {
 
     return (
         <div>
@@ -12,5 +12,5 @@ function about(props) {
 
 // about.propTypes = {}
 
-export default about
+export default About
 

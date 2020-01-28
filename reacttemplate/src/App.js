@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
 import { Switch, Route } from "react-router-dom";
-import Home from './home'
-import About from './about'
-import NavBar from './navbar'
-import Main from './main'
-import FourZeroFour from './fourzerofour';
+import Home from './Home'
+import About from './About'
+import NavBar from './NavBar'
+import Main from './Main'
+import FourZeroFour from './FourZeroFour';
 
 
 function App() {
