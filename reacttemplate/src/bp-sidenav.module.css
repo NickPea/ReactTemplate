@@ -1,0 +1,19 @@
+
+/* sidenave styles */
+
+.navContainer {
+    height: 100vh;
+    width: max-content;
+    position: sticky;
+    left: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: rgba(94, 61, 48, 0.836);
+    border-radius: 0 5px 5px 0;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.navLinks {
+    color: white;
+}

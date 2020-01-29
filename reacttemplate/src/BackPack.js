@@ -1,18 +1,29 @@
 import React from "react";
-import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
-import ShowBootstrap from "./ShowBootstrap";
+import { Switch, Route} from "react-router-dom";
+import Styles from "./backpack.module.css";
+import Sidenav from "./bp-sidenav";
+import Display from "./bp-display";
+
+//components
+import ShowBootstrap from "./showbootstrap";
 
 export default function BackPack() {
-  const { url, path } = useRouteMatch();
+
+  const backPack = [
+    { relativePath: "showbootstrap", label: "Strap-O-Rama!", component: ShowBootstrap },
+    { relativePath: "showdryland", label: "Dry Land", component: ()=><>Im working!</> },
+    { relativePath: "showdepositive", label: "De-Positive", component: ()=><>Im working!</> },
+    { relativePath: "showvetcrowd", label: "Vet Crowd", component: ()=><>Im working!</> },
+    { relativePath: "showaccountmanager", label: "Component PlayGround", component: ()=><>Im working!</> }
+  ];
+
   return (
-    <div>
+    <>
       <h3>The BackPack</h3>
-
-      <Link to={`${url}/showbootstrap`}>Strap-o-Rama</Link>
-
-      <Switch>
-        <Route path={`${path}/showbootstrap`}><ShowBootstrap /></Route>
-      </Switch>
-    </div>
+      <div className={Styles.bpFlex}>
+        <Sidenav routeList={backPack} />
+        <Display routeList={backPack} />
+      </div>
+    </>
   );
 }
