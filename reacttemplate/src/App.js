@@ -14,9 +14,12 @@ function App() {
   const location = useLocation();
   const transitions = useTransition(location, location => location.pathname, {
     config: config.slow,
-    from: { opacity: "0", position: 'absolute' },
-    enter: { opacity: "1" },
-    leave: { opacity: "0" }
+    //ALL THREE ANIMATION OBJECTS MUST CONTAIN
+    //THE SAME PROPERTIES AND AN OBVIOUS PATTERN
+    //OF VALUE CHANGES!!!!!!
+    from: { opacity: "0",  position: 'absolute', width: '100%'},
+    enter: { opacity: "1", position: 'static'  , width: '100%'},
+    leave: { opacity: "0", position: 'absolute', width: '100%'},
   });
 
   return (

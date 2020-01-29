@@ -1,19 +1,59 @@
-
 /* sidenave styles */
-
-.navContainer {
-    height: 100vh;
-    width: max-content;
-    position: sticky;
-    left: 0;
-    display: flex;
-    flex-flow: column nowrap;
-    background-color: rgba(94, 61, 48, 0.836);
-    border-radius: 0 5px 5px 0;
-    padding: 10px;
-    overflow-y: auto;
+.navWrapper {
+  position: sticky;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+.navContent {
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: black;
+  padding-left: 20px;
+  /* pre transition setup */
+  width: 250px;
+  transition: 1000ms ease;
 }
 
 .navLinks {
-    color: white;
+  color: white;
+  overflow: hidden;
+}
+
+.navToggle {
+  position: relative;
+  left: 0;
+  background-color: lightgrey;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  transition: 200ms ease;
+}
+
+.navToggle p {
+  margin: 0;
+  font-style: oblique;
+  letter-spacing: 1px;
+  text-indent: 30px;
+  font-weight: bolder;
+}
+.navToggle i {
+  position: absolute;
+  top: 5px;
+  right: 3px;
+  transition: transform 1000ms ease, color 200ms ease;
+}
+.navToggle:hover {
+  background-color: darkgray;
+  color: white;
+}
+.navToggle:active {
+  top: 10px;
+}
+.navToggle:hover i {
+  transform: rotateZ(45deg);
+}
+.closeNav {
+  transform: scaleX(0);
 }

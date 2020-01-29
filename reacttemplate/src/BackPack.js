@@ -1,5 +1,4 @@
 import React from "react";
-import { Switch, Route} from "react-router-dom";
 import Styles from "./backpack.module.css";
 import Sidenav from "./bp-sidenav";
 import Display from "./bp-display";
@@ -14,13 +13,13 @@ export default function BackPack() {
     { relativePath: "showdryland", label: "Dry Land", component: ()=><>Im working!</> },
     { relativePath: "showdepositive", label: "De-Positive", component: ()=><>Im working!</> },
     { relativePath: "showvetcrowd", label: "Vet Crowd", component: ()=><>Im working!</> },
-    { relativePath: "showaccountmanager", label: "Component PlayGround", component: ()=><>Im working!</> }
+    { relativePath: "showaccountmanager", label: "Component Playground", component: ()=><>Im working!</> }
   ];
 
   return (
     <>
-      <h3>The BackPack</h3>
-      <div className={Styles.bpFlex}>
+      <h3>BackPack</h3>
+      <div>
         <Sidenav routeList={backPack} />
         <Display routeList={backPack} />
       </div>
