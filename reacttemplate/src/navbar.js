@@ -15,6 +15,9 @@ function NavBar(props) {
         <li>
           <Link to="/main">Main</Link>
         </li>
+        <li>
+          <Link to="/backpack">Backpack</Link>
+        </li>
       </ul>
     </div>
   );

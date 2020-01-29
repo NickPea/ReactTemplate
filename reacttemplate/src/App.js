@@ -6,6 +6,7 @@ import Home from "./home";
 import About from "./about";
 import NavBar from "./navbar";
 import Main from "./main";
+import BackPack from "./BackPack";
 import FourZeroFour from "./fourzerofour";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
             <Route exact path="/" render={Home} />
             <Route path="/about" render={About} />
             <Route path="/main" render={Main} />
+            <Route path="/backpack" render={BackPack} />
             <Route path="*" render={FourZeroFour} />
           </Switch>
         </animated.div>
