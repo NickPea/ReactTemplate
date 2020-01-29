@@ -1,6 +1,5 @@
 import React from "react";
 import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
-import FourZeroFour from "./fourzerofour";
 import ShowBootstrap from "./ShowBootstrap";
 
 export default function BackPack() {
@@ -9,11 +8,10 @@ export default function BackPack() {
     <div>
       <h3>The BackPack</h3>
 
-      <Link to={`${url}/bootstrapdemo`} />
+      <Link to={`${url}/showbootstrap`}>Strap-o-Rama</Link>
 
       <Switch>
-        <Route exact path={`${path}/showbootstrap`} render={ShowBootstrap} />
-        <Route path="*" render={FourZeroFour} />
+        <Route path={`${path}/showbootstrap`}><ShowBootstrap /></Route>
       </Switch>
     </div>
   );

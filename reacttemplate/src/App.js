@@ -6,7 +6,7 @@ import Home from "./home";
 import About from "./about";
 import NavBar from "./navbar";
 import Main from "./main";
-import BackPack from "./BackPack";
+import Backpack from "./backpack";
 import FourZeroFour from "./fourzerofour";
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
   const location = useLocation();
   const transitions = useTransition(location, location => location.pathname, {
     config: config.slow,
-    from: { opacity: "0", position: "absolute" },
+    from: { opacity: "0", position: 'absolute' },
     enter: { opacity: "1" },
     leave: { opacity: "0" }
   });
@@ -28,11 +28,11 @@ function App() {
       {transitions.map(({ item, props, key }) => (
         <animated.div key={key} style={props}>
           <Switch location={item}>
-            <Route exact path="/" render={Home} />
-            <Route path="/about" render={About} />
-            <Route path="/main" render={Main} />
-            <Route path="/backpack" render={BackPack} />
-            <Route path="*" render={FourZeroFour} />
+            <Route exact path="/"><Home /></Route>
+            <Route path="/about"><About /></Route>
+            <Route path="/main"><Main /></Route>
+            <Route path="/backpack"><Backpack /></Route>
+            <Route path="*"><FourZeroFour /></Route>
           </Switch>
         </animated.div>
       ))}
