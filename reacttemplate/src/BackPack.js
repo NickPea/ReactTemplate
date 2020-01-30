@@ -1,7 +1,7 @@
 import React from "react";
 import Styles from "./backpack.module.css";
 import Sidenav from "./bp-sidenav";
-import Display from "./bp-display";
+import RouteDisplay from "./bp-routedisplay";
 
 //components
 import ShowBootstrap from "./showbootstrap";
@@ -41,7 +41,7 @@ export default function BackPack() {
 
       <div className={Styles.pageWrapper}>
         <Sidenav className={Styles.pageNav} routeList={backPack} />
-        <Display routeList={backPack} />
+        <RouteDisplay routeList={backPack} />
       </div>
     </>
   );
