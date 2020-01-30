@@ -1,13 +1,19 @@
 import React from "react";
 import Styles from "./backpack.module.css";
-import Sidenav from "./bp-sidenav";
-import RouteDisplay from "./bp-routedisplay";
+import Sidenav from "./sidenav";
+import RouteDisplay from "./routedisplay";
 
 //components
 import ShowBootstrap from "./showbootstrap";
+import Welcome from './showwelcome'
 
 export default function BackPack() {
   const backPack = [
+    {
+      relativePath: "showwelcome",
+      label: "Index",
+      component: Welcome
+    },
     {
       relativePath: "showbootstrap",
       label: "Strap-O-Rama!",
@@ -32,7 +38,12 @@ export default function BackPack() {
       relativePath: "showaccountmanager",
       label: "Component Playground & Ant T. WigglesWorth",
       component: () => <>Im working!</>
-    }
+    },
+    {
+      relativePath: "showsvgjungle",
+      label: "SVG Jungle",
+      component: () => <>Im working!</>
+    },
   ];
 
   return (
@@ -41,7 +52,7 @@ export default function BackPack() {
 
       <div className={Styles.pageWrapper}>
         <Sidenav className={Styles.pageNav} routeList={backPack} />
-        <RouteDisplay routeList={backPack} />
+        <RouteDisplay routeList={backPack}/>
       </div>
     </>
   );

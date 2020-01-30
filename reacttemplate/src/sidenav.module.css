@@ -41,9 +41,6 @@
   text-decoration: none;
   color: white; /* same as when not hovered */
 }
-.navLinks > *:active { /*Link elements*/
-  font-weight: bold;
-}
 
 .navToggle {
   position: absolute;

@@ -16,7 +16,7 @@ function NavBar(props) {
           <Link to="/main">Main</Link>
         </li>
         <li>
-          <Link to="/backpack">Backpack</Link>
+          <Link to="/backpack/showwelcome">Backpack</Link>
         </li>
       </ul>
     </div>

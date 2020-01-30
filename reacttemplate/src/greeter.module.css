@@ -1,0 +1,18 @@
+
+.greeterWrapper {
+
+    /* box */
+    border: 1px solid hsl(0, 0%, 0%);
+    border-radius: 5px;
+    background: hsl(60, 1%, 95%);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+
+    /* text */
+    padding: 10px;
+    text-align: center;
+    font-weight: bolder;
+    padding-top: 8px;
+    font-style: oblique;
+
+    
+}
