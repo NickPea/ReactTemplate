@@ -5,11 +5,14 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import AppService from './context/appservice'
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <AppService>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </AppService>,
   document.getElementById("root")
 );
 
