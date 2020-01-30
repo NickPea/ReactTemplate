@@ -7,6 +7,7 @@ import About from "./about";
 import NavBar from "./navbar";
 import Main from "./main";
 import Backpack from "./backpack";
+import Testing from "./testing";
 import FourZeroFour from "./fourzerofour";
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
             <Route path="/about"><About /></Route>
             <Route path="/main"><Main /></Route>
             <Route path="/backpack"><Backpack /></Route>
+            <Route path="/testing"><Testing /></Route>
             <Route path="*"><FourZeroFour /></Route>
           </Switch>
         </animated.div>

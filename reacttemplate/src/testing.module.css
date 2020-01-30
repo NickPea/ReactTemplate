@@ -1,0 +1,11 @@
+
+.pageWrapper {
+    position: relative;
+    border: 1px solid black;
+    height: 100vh;
+}
+.pageTitle {
+    position: absolute;
+    top: -25px;
+    right: 30px;
+}
