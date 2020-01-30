@@ -1,59 +1,90 @@
-/* sidenave styles */
+
 .navWrapper {
-  position: sticky;
-  height: 100vh;
-  display: flex;
+  position: relative;
+
+  /* tweaks */
+  border: 1px solid white;
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+  box-shadow: 3px 0px 5px 0px rgba(0, 0, 0, 0.15);
   overflow: hidden;
 }
-.navContent {
-  display: flex;
-  flex-flow: column nowrap;
-  background-color: black;
-  padding-left: 20px;
-  /* pre transition setup */
+
+.navContent  {
+  min-height: 100vh;
+
+  /* tweaks */
+  background-color: rgb(8, 8, 48);
+
+  /* pre-transition setup */
   width: 250px;
-  transition: 1000ms ease;
+  overflow: hidden;
+  transition: 700ms ease-out;
 }
 
 .navLinks {
+  /* empty class used to provide 
+  styles for Link elements*/
+}
+
+.navLinks > * { /*Link elements*/
+  padding-left: 15px;
+  padding-right: 45px; /*width of navToggle + padding-left*/
+  /* tweaks */
+  display: inline-block;
+  width: 100% ;
   color: white;
-  overflow: hidden;
+  transition: 200ms;
+}
+
+.navLinks > *:hover { /*Link elements*/
+  text-decoration: none;
+  color: white; /* same as when not hovered */
+}
+.navLinks > *:active { /*Link elements*/
+  font-weight: bold;
 }
 
 .navToggle {
-  position: relative;
-  left: 0;
-  background-color: lightgrey;
-  border-radius: 0 5px 5px 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+
+  /* tweaks */
   cursor: pointer;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  transition: 200ms ease;
+  transition: 100ms;
+  background-color: darkgray;
 }
 
-.navToggle p {
-  margin: 0;
-  font-style: oblique;
-  letter-spacing: 1px;
-  text-indent: 30px;
-  font-weight: bolder;
-}
-.navToggle i {
-  position: absolute;
-  top: 5px;
-  right: 3px;
-  transition: transform 1000ms ease, color 200ms ease;
-}
 .navToggle:hover {
-  background-color: darkgray;
-  color: white;
+  background-color: lightgray;
+  transform-origin: top;
 }
 .navToggle:active {
+  background-color: darkgray;
+  border-left: 5px outset white; /*same color as the page*/
+}
+
+.navToggle i  { /* navToggle Icon */
+  position: relative;
   top: 10px;
+  left: 7px;
+  color: white;
+  transition: 800ms ease-out;
 }
-.navToggle:hover i {
-  transform: rotateZ(45deg);
-}
-.closeNav {
-  transform: scaleX(0);
+
+.navToggle span { /* navToggle Text */
+  position: relative;
+  top: 20px;
+  color: white;
+  font-size: 1.1rem;
+  font-style: oblique;
+  font-weight: bold;
+  letter-spacing: 2px;
+
+  /* text manipulation */
+  writing-mode: vertical-rl;
+  text-orientation: upright;
 }

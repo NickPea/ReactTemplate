@@ -7,20 +7,40 @@ import Display from "./bp-display";
 import ShowBootstrap from "./showbootstrap";
 
 export default function BackPack() {
-
   const backPack = [
-    { relativePath: "showbootstrap", label: "Strap-O-Rama!", component: ShowBootstrap },
-    { relativePath: "showdryland", label: "Dry Land", component: ()=><>Im working!</> },
-    { relativePath: "showdepositive", label: "De-Positive", component: ()=><>Im working!</> },
-    { relativePath: "showvetcrowd", label: "Vet Crowd", component: ()=><>Im working!</> },
-    { relativePath: "showaccountmanager", label: "Component Playground", component: ()=><>Im working!</> }
+    {
+      relativePath: "showbootstrap",
+      label: "Strap-O-Rama!",
+      component: ShowBootstrap
+    },
+    {
+      relativePath: "showdryland",
+      label: "Dry Land",
+      component: () => <>Im working!</>
+    },
+    {
+      relativePath: "showdepositive",
+      label: "De-Positive",
+      component: () => <>Im working!</>
+    },
+    {
+      relativePath: "showvetcrowd",
+      label: "Vet Crowd",
+      component: () => <>Im working!</>
+    },
+    {
+      relativePath: "showaccountmanager",
+      label: "Component Playground & Ant T. WigglesWorth",
+      component: () => <>Im working!</>
+    }
   ];
 
   return (
     <>
       <h3>BackPack</h3>
-      <div>
-        <Sidenav routeList={backPack} />
+
+      <div className={Styles.pageWrapper}>
+        <Sidenav className={Styles.pageNav} routeList={backPack} />
         <Display routeList={backPack} />
       </div>
     </>

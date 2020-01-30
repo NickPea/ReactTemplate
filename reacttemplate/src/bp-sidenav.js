@@ -1,39 +1,39 @@
-import React, { useState }from "react";
+import React, { useState } from "react";
 import { Link, useRouteMatch } from "react-router-dom";
-import Styles from "./bp-sidenav.module.css";
+import css from "./bp-sidenav.module.css";
 
 function Sidenav({ routeList }) {
   const [isOpen, setIsOpen] = useState(true);
   const { url } = useRouteMatch();
 
   const closeNav = {
-    width: '0%',
-    padding: '0'
+    width: '30px', //size of the navToggle width
   }
-
-  const spinToggle = {
+  const spinIcon = {
     transform: 'rotateZ(540deg)'
   }
 
   return (
-    <div className={Styles.navWrapper}>
-      <div className={Styles.navContent} style={!isOpen? closeNav: null}>
-        {routeList.map((item, index) => (
-          <Link
-            key={index}
-            className={Styles.navLinks}
-            to={`${url}/${item.relativePath}`}>
-            {item.label}
-          </Link>
-        ))}
+    <div className={css.navWrapper}>
+      <div className={css.navContent} style={!isOpen? closeNav: null}>
+        {
+        //Links
+        routeList.map((item, index) => (
+          <div className={css.navLinks}>
+            <Link key={index} to={`${url}/${item.relativePath}`}>
+              {item.label}
+            </Link>
+          </div>
+        ))
+        //Links
+        }
       </div>
-      <div className={Styles.navToggle} onClick={()=>setIsOpen(!isOpen)}>
-        <i class="fas fa-pizza-slice" style={!isOpen? spinToggle: null} ></i>
-        <p>Lunchbox</p>
-
+      <div className={css.navToggle} onClick={()=>setIsOpen(!isOpen)}>
+        <i className="fas fa-pizza-slice" style={!isOpen? spinIcon: null}></i>
+        <span>Homework</span>
       </div>
     </div>
   );
-}
+} //end component
 
 export default Sidenav;
