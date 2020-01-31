@@ -4,8 +4,8 @@ import Sidenav from "../components/sidenav";
 import RouteDisplay from "../components/routedisplay";
 
 //components
-import ShowBootstrap from "../components/showbootstrap";
-import Welcome from '../components/showwelcome'
+import ShowBootstrap from "../pages/showbootstrap";
+import Welcome from '../pages/showwelcome'
 
 export default function BackPack() {
   const backPack = [
