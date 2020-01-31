@@ -1,14 +1,14 @@
 import React from "react";
-import "./App.css";
+import style from './app.module.css'
 import { Switch, Route, useLocation } from "react-router-dom";
 import { useTransition, animated, config } from "react-spring";
-import Home from "./home";
-import About from "./about";
-import NavBar from "./navbar";
-import Main from "./main";
-import Backpack from "./backpack";
-import Testing from "./testing";
-import FourZeroFour from "./fourzerofour";
+import Home from "./pages/home";
+import About from "./pages/about";
+import NavBar from "./components/navbar";
+import Main from "./pages/main";
+import Backpack from "./pages/backpack";
+import Testing from "./pages/testing";
+import FourZeroFour from "./pages/fourzerofour";
 
 function App() {
   //Route Transitions with spring-react hooks
@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div>
-      <h3 className="appTemplateTitle">React Template</h3>
+      <h3 className={style.appTemplateTitle}>React Template</h3>
 
       <NavBar />
 

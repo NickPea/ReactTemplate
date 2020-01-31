@@ -1,11 +1,11 @@
 import React from "react";
 import Styles from "./backpack.module.css";
-import Sidenav from "./sidenav";
-import RouteDisplay from "./routedisplay";
+import Sidenav from "../components/sidenav";
+import RouteDisplay from "../components/routedisplay";
 
 //components
-import ShowBootstrap from "./showbootstrap";
-import Welcome from './showwelcome'
+import ShowBootstrap from "../components/showbootstrap";
+import Welcome from '../components/showwelcome'
 
 export default function BackPack() {
   const backPack = [
