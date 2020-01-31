@@ -4,7 +4,7 @@ import Sidenav from "../components/sidenav";
 import RouteDisplay from "../components/routedisplay";
 
 //components
-import ShowBootstrap from "../pages/showbootstrap";
+import OurWedding from "../pages/ourwedding";
 import Welcome from '../pages/showwelcome'
 
 export default function BackPack() {
@@ -15,9 +15,9 @@ export default function BackPack() {
       component: Welcome
     },
     {
-      relativePath: "showbootstrap",
+      relativePath: "showourwedding",
       label: "Strap-O-Rama!",
-      component: ShowBootstrap
+      component: OurWedding
     },
     {
       relativePath: "showdryland",
