@@ -5,9 +5,7 @@ import {
   Col,
   Image,
   Tabs,
-  Tab,
-  Form,
-  Button
+  Tab
 } from "react-bootstrap";
 import RSVP from '../components/rsvp'
 import style from "./ourwedding.module.css";
