@@ -6,15 +6,19 @@ export default function Reply({ name, phone, message, diet }) {
     <div>
       <Card>
         <Card.Header style={{ backgroundColor: "blanchedalmond" }}>
-          <h5>
-            <i>{name}</i>
-          </h5>
+          <h4>
+            <u>
+              <i>{name}</i>
+            </u>
+          </h4>
         </Card.Header>
         <Card.Body>
           <Card.Text>
-            {phone ? <p>Phone: {phone}</p> : null}
-            {message ? <p>Message: {message}</p> : null}
-            {diet ? <p>Diet: {diet}</p> : null}
+            {message ? (
+              <h5 style={{ textAlign: "center" }}>
+                <i>"{message}"</i>
+              </h5>
+            ) : null}
           </Card.Text>
         </Card.Body>
       </Card>

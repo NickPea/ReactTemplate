@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+
 import { Form, Button, Card, Nav } from "react-bootstrap";
 import { useSpring, animated, config } from "react-spring";
+
+import { OurWeddingContext } from "../context/ourweddingservice";
 
 function RSVP() {
   //toggles diet requirements input on check
@@ -50,14 +53,17 @@ function RSVP() {
     }
   });
 
+  //page context
+  const weddingContext = useContext(OurWeddingContext);
+
   //handles form submission and activates react-bootstrap
   //validation messages if needed
   const [isValidated, setisValidated] = useState(false);
   const handleSubmit = e => {
+    e.preventDefault();
+    e.stopPropagation();
     const form = e.currentTarget;
     if (form.checkValidity() === false) {
-      e.preventDefault();
-      e.stopPropagation();
       setisValidated(true);
     } else {
       console.log(`
@@ -66,6 +72,14 @@ function RSVP() {
         message ${formData.message}
         diet: ${formData.diet}
       `);
+      weddingContext.addRsvpd(formData);
+      console.log(weddingContext.rsvpd);
+      setFormData({
+        name: "",
+        phone: "",
+        message: "",
+        diet: ""
+      });
       //create a toast eventually
       //clear all form state
       //redirect to first tab
@@ -162,6 +176,10 @@ function RSVP() {
                   value={formData.message}
                   onChange={handleChange}
                 />
+                <Form.Text>
+                  Note: This message will be displayed on the welcome page if
+                  you are attending.
+                </Form.Text>
               </Form.Group>
 
               {/* special dietary requirments--> */}

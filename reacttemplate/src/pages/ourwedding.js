@@ -61,8 +61,9 @@ function OurWedding() {
                     <div>
                       <code>RVSP'd grid here...</code>
                       <CardColumns>
-                        {weddingContext.rsvpd.map(value => (
+                        {weddingContext.rsvpd.map((value, index) => (
                           <Reply
+                            key={index}
                             name={value.name}
                             phone={value.phone}
                             message={value.message}
