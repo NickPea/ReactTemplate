@@ -26,9 +26,27 @@ export function OurWeddingService(props) {
     setRsvpd([...rsvpd, newRsvp]);
   };
 
+  const [activeTab, setactiveTab] = useState("welcome");
+  const changeActiveTab = tabEventKey => {
+    setactiveTab(tabEventKey);
+  };
+
+  const [isShowToast, setisShowToast] = useState(false);
+  const changeShowToast = change => {
+    setisShowToast(change);
+  };
+
   return (
     <>
-      <OurWeddingContext.Provider value={{ rsvpd, addRsvpd }}>
+      <OurWeddingContext.Provider
+        value={{
+          rsvpd,
+          addRsvpd,
+          activeTab,
+          changeActiveTab,
+          isShowToast,
+          changeShowToast
+        }}>
         {props.children}
       </OurWeddingContext.Provider>
     </>

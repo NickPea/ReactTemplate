@@ -11,6 +11,7 @@ import {
 } from "react-bootstrap";
 import RSVP from "../components/rsvp";
 import Reply from "../components/reply";
+import RsvpToast from "../components/rsvpToast";
 import style from "./ourwedding.module.css";
 import WedPhoto from "../assets/wed1.jfif";
 import WedLocation from "../assets/hsw1.png";
@@ -20,6 +21,14 @@ function OurWedding() {
 
   return (
     <div className={style.pageWrapper}>
+      {/* Toast */}
+      <RsvpToast
+        name={weddingContext.rsvpd[weddingContext.rsvpd.length - 1].name}
+        show={weddingContext.isShowToast}
+        onClose={() => weddingContext.changeShowToast(false)}
+        dissmissable
+      />
+      {/* Toast */}
       <Container fluid>
         <Row>
           <Col>{/* empty for now */}</Col>
@@ -42,7 +51,9 @@ function OurWedding() {
           <Col>
             <section>
               <div className={style.mainTabs}>
-                <Tabs>
+                <Tabs
+                  activeKey={weddingContext.activeTab}
+                  onSelect={tab => weddingContext.changeActiveTab(tab)}>
                   <Tab eventKey="welcome" title="Welcome">
                     <div className={style.leadIn}>
                       <h3>Yes, we're getting married again!</h3>

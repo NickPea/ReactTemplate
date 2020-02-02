@@ -73,14 +73,15 @@ function RSVP() {
         diet: ${formData.diet}
       `);
       weddingContext.addRsvpd(formData);
-      console.log(weddingContext.rsvpd);
+      //wipe input data
       setFormData({
         name: "",
         phone: "",
         message: "",
         diet: ""
       });
-      //create a toast eventually
+      weddingContext.changeActiveTab("welcome");
+      weddingContext.changeShowToast(true);
       //clear all form state
       //redirect to first tab
     }
