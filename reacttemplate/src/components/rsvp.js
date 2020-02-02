@@ -62,10 +62,10 @@ function RSVP() {
       setisValidated(true);
     } else {
       console.log (`
-        name: ${name}
-        phone: ${phone}
-        message ${message}
-        diet: ${diet}
+        name: ${formData.name}
+        phone: ${formData.phone}
+        message ${formData.message}
+        diet: ${formData.diet}
       `);
       //create a toast eventually
       //clear all form state
@@ -74,33 +74,20 @@ function RSVP() {
   };
 
   //controlled form elements compoents state
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [message, setMessage] = useState('');
-  const [diet, setDiet] = useState('');
+  //and handle function
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    message: '',
+    diet: ''
+  })//end useState
 
-  //no e.target.checked needed as no need to monitor
-  //but could have used e.target.type!=='checkbox' or 
-  //&& ...!=='radio to differentiate from an <input>
   const handleChange = (e) => {
-    console.log(e.target.name);
-    switch (e.target.name) {
-      case 'nameInput': 
-        setName(e.target.value);        
-        break;
-      case 'phoneInput':
-        setPhone(e.target.value);
-        break;
-      case 'messageInput':
-        setMessage(e.target.value);
-        break;
-      case 'dietInput':
-        setDiet(e.target.value);
-        break;
-      default:
-        break;
-    }//end switch
-  }//end handleChange
+    setFormData({
+      ...formData, 
+      [e.target.name]: e.target.value
+    })
+  }//end  handleChange
 
 
 
@@ -148,8 +135,8 @@ function RSVP() {
                 <Form.Control 
                 size="sm" 
                 type="text" 
-                name='nameInput'
-                value={name}
+                name='name'
+                value={formData.name}
                 onChange={handleChange}
                 required />
                 <Form.Control.Feedback type="invalid">
@@ -163,8 +150,8 @@ function RSVP() {
                   <Form.Control 
                   size="sm" 
                   type="text"
-                  name='phoneInput'
-                  value={phone}
+                  name='phone'
+                  value={formData.phone}
                   onChange={handleChange} />
                 </Form.Group>
               ) : null}
@@ -174,8 +161,8 @@ function RSVP() {
                 <Form.Control 
                 as="textarea" 
                 rows="1"
-                name='messageInput'
-                value={message}
+                name='message'
+                value={formData.message}
                 onChange={handleChange} />
               </Form.Group>
 
@@ -196,8 +183,8 @@ function RSVP() {
                     as="textarea"
                     rows="2"
                     placeholder="How can we cater to your needs?"
-                    name='dietInput'
-                    value={diet}
+                    name='diet'
+                    value={formData.diet}
                     onChange={handleChange} />
                 </Form.Group>
               ) : null}
