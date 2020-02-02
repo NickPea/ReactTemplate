@@ -1,18 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
+import { OurWeddingContext } from "../context/ourweddingservice";
 import {
   Container,
   Row,
   Col,
   Image,
   Tabs,
-  Tab
+  Tab,
+  CardColumns
 } from "react-bootstrap";
-import RSVP from '../components/rsvp'
+import RSVP from "../components/rsvp";
+import Reply from "../components/reply";
 import style from "./ourwedding.module.css";
 import WedPhoto from "../assets/wed1.jfif";
 import WedLocation from "../assets/hsw1.png";
 
 function OurWedding() {
+  const weddingContext = useContext(OurWeddingContext);
+
   return (
     <div className={style.pageWrapper}>
       <Container fluid>
@@ -52,7 +57,20 @@ function OurWedding() {
                         are attending by RSVP-ing.
                       </p>
                     </div>
-                    <code>RVSP'd grid here...</code>
+                    <hr />
+                    <div>
+                      <code>RVSP'd grid here...</code>
+                      <CardColumns>
+                        {weddingContext.rsvpd.map(value => (
+                          <Reply
+                            name={value.name}
+                            phone={value.phone}
+                            message={value.message}
+                            diet={value.diet}
+                          />
+                        ))}
+                      </CardColumns>
+                    </div>
                   </Tab>
                   <Tab eventKey="ourStory" title="Our Story">
                     <h3 className={style.leadIn}>What do you know about us?</h3>
@@ -91,7 +109,7 @@ function OurWedding() {
                     </div>
                     <Row>
                       <Col md={{ span: 6, offset: 3 }}>
-                        <RSVP/>
+                        <RSVP />
                       </Col>
                     </Row>
                   </Tab>

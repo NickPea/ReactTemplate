@@ -37,13 +37,13 @@ function RSVP() {
   const spring = useSpring({
     config: config.stiff,
     from: {
-      transform: "scale(0) translateY(0px)",
+      transform: "scale(0)",
       boxShadow: "0px 0px 10px 5px rgb(0,0,0,0.5)",
       zIndex: "0",
       transition: "transform 600ms ease-out"
     },
     to: {
-      transform: "scale(1.1) translateY(-100px)",
+      transform: "scale(1.1)",
       boxShadow: "0px 0px 10px 1000px rgb(0,0,0,0.7)",
       zIndex: "999",
       transition: "transform 600ms ease-out"
@@ -55,13 +55,12 @@ function RSVP() {
   const [isValidated, setisValidated] = useState(false);
   const handleSubmit = e => {
     const form = e.currentTarget;
-    e.preventDefault();
-    e.stopPropagation();
-    
     if (form.checkValidity() === false) {
+      e.preventDefault();
+      e.stopPropagation();
       setisValidated(true);
     } else {
-      console.log (`
+      console.log(`
         name: ${formData.name}
         phone: ${formData.phone}
         message ${formData.message}
@@ -76,20 +75,18 @@ function RSVP() {
   //controlled form elements compoents state
   //and handle function
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    message: '',
-    diet: ''
-  })//end useState
+    name: "",
+    phone: "",
+    message: "",
+    diet: ""
+  }); //end useState
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     setFormData({
-      ...formData, 
+      ...formData,
       [e.target.name]: e.target.value
-    })
-  }//end  handleChange
-
-
+    });
+  }; //end  handleChange
 
   return (
     <>
@@ -132,13 +129,13 @@ function RSVP() {
               className="d-flex flex-column">
               <Form.Group>
                 <Form.Label>Name(s)</Form.Label>
-                <Form.Control 
-                size="sm" 
-                type="text" 
-                name='name'
-                value={formData.name}
-                onChange={handleChange}
-                required />
+                <Form.Control
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
                 <Form.Control.Feedback type="invalid">
                   Who's this?
                 </Form.Control.Feedback>
@@ -147,23 +144,24 @@ function RSVP() {
               {activeKey === "attend" ? (
                 <Form.Group>
                   <Form.Label>Phone Number(s)</Form.Label>
-                  <Form.Control 
-                  size="sm" 
-                  type="text"
-                  name='phone'
-                  value={formData.phone}
-                  onChange={handleChange} />
+                  <Form.Control
+                    type="text"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                  />
                 </Form.Group>
               ) : null}
 
               <Form.Group>
                 <Form.Label>Leave Us A Message...</Form.Label>
-                <Form.Control 
-                as="textarea" 
-                rows="1"
-                name='message'
-                value={formData.message}
-                onChange={handleChange} />
+                <Form.Control
+                  as="textarea"
+                  rows="1"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                />
               </Form.Group>
 
               {/* special dietary requirments--> */}
@@ -183,9 +181,10 @@ function RSVP() {
                     as="textarea"
                     rows="2"
                     placeholder="How can we cater to your needs?"
-                    name='diet'
+                    name="diet"
                     value={formData.diet}
-                    onChange={handleChange} />
+                    onChange={handleChange}
+                  />
                 </Form.Group>
               ) : null}
               {/* <--special dietary requirments */}
