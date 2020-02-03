@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
-import { CardColumns } from "react-bootstrap";
+import { CardColumns, Row, Col } from "react-bootstrap";
+import style from "./welcomecontent.module.css";
 import Reply from "../components/reply";
 import { OurWeddingContext } from "../context/ourweddingservice";
 
@@ -9,15 +10,11 @@ export default function WelcomeContent() {
   return (
     <>
       <div>
-        <h3>
-          This is your <u>official invitation</u> to our 2020 wedding.
-        </h3>
-        <p>
-          Please have a read through, and then let us know if you are attending
-          by RSVP-ing.
-        </p>
+        <h4>And you're officially invited.</h4>
+        <p>Please have a read through, add yourself to the wall by RSVPing</p>
       </div>
-      <div>
+
+      <div className={style.rsvpdWall}>
         <CardColumns>
           {weddingContext.rsvpd.map((value, index) => (
             <Reply

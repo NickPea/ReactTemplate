@@ -4,7 +4,7 @@ import { Card } from "react-bootstrap";
 export default function Reply({ name, phone, message, diet }) {
   return (
     <div>
-      <Card>
+      <Card style={{ borderRadius: "20px", overflow: "hidden" }}>
         <Card.Header style={{ backgroundColor: "blanchedalmond" }}>
           <h4>
             <u>

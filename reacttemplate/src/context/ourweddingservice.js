@@ -29,6 +29,7 @@ export function OurWeddingService(props) {
   const [activeTab, setactiveTab] = useState("welcome");
   const changeActiveTab = tabEventKey => {
     setactiveTab(tabEventKey);
+    setIsViewing(false);
   };
 
   //toast state triggered when RVSP component form is submited

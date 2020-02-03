@@ -4,8 +4,8 @@ import Sidenav from "../components/sidenav";
 import RouteDisplay from "../components/routedisplay";
 
 //components
-import OurWedding from "../pages/ourwedding";
-import Welcome from '../pages/showwelcome'
+import OurWeddingContainer from "../containers/ourweddingcontainer";
+import Welcome from "../pages/showwelcome";
 
 export default function BackPack() {
   const backPack = [
@@ -16,8 +16,8 @@ export default function BackPack() {
     },
     {
       relativePath: "showourwedding",
-      label: "Strap-O-Rama!",
-      component: OurWedding
+      label: "Our Wedding",
+      component: OurWeddingContainer
     },
     {
       relativePath: "showdryland",
@@ -43,7 +43,7 @@ export default function BackPack() {
       relativePath: "showsvgjungle",
       label: "SVG Jungle",
       component: () => <>Im working!</>
-    },
+    }
   ];
 
   return (
@@ -52,7 +52,7 @@ export default function BackPack() {
 
       <div className={Styles.pageWrapper}>
         <Sidenav className={Styles.pageNav} routeList={backPack} />
-        <RouteDisplay routeList={backPack}/>
+        <RouteDisplay routeList={backPack} />
       </div>
     </>
   );

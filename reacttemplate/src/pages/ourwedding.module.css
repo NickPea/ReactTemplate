@@ -2,6 +2,10 @@
   background-color: rgba(255, 235, 205, 0.3);
 }
 
+.tabHeader {
+  padding: 10px;
+}
+
 .leadIn {
   margin: 30px;
   text-align: center;
