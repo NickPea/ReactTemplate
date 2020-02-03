@@ -1,0 +1,25 @@
+.wedTitle {
+  position: absolute;
+  left: 25px;
+  padding: 5px;
+  color: blanchedalmond;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 0px 20px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+.wedTitle h1 {
+  border-bottom: 3px solid blanchedalmond;
+}
+
+/* .letterAccent {
+    font-weight: 600;
+    color: gray;
+} */
+
+.jumboImage {
+  height: 600px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}

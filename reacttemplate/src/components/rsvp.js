@@ -6,26 +6,6 @@ import { useSpring, animated, config } from "react-spring";
 import { OurWeddingContext } from "../context/ourweddingservice";
 
 function RSVP() {
-  //toggles diet requirements input on check
-  const [isHasDietReq, setisHasDietReq] = useState(false);
-  const handleChecked = e => setisHasDietReq(e.target.checked);
-  const [activeKey, setactiveKey] = useState("attend");
-  const handleSelect = e => {
-    setactiveKey(e);
-    setisHasDietReq(false);
-  };
-
-  //activated a focusing effect when the form card
-  //is clicked. Also closebutton is hidden unless
-  //this effect is activated
-  const [isViewing, setIsViewing] = useState(false);
-  const handleClickOpen = () => setIsViewing(true);
-  const handleClickClose = e => {
-    setIsViewing(false);
-    setisHasDietReq(false);
-    e.stopPropagation();
-  };
-
   //close button ('x') styles
   const closeButton = {
     position: "absolute",
@@ -105,21 +85,21 @@ function RSVP() {
 
   return (
     <>
-      <animated.div style={isViewing ? spring : null}>
+      <animated.div style={weddingContext.isViewing ? spring : null}>
         <Card
           style={{
             boxShadow: "0px 0px 10px 5px rgb(0,0,0,0.5)"
           }}
-          onClick={handleClickOpen}>
+          onClick={weddingContext.handleClickOpen}>
           <Card.Header
             className="d-flex font-italic"
             style={{ backgroundColor: "blanchedalmond" }}>
             <h2>RSVP</h2>
             <Nav
               variant="tabs"
-              activeKey={activeKey}
+              activeKey={weddingContext.activeKey}
               className="ml-auto align-self-end"
-              onSelect={handleSelect}>
+              onSelect={weddingContext.handleSelect}>
               <Nav.Item>
                 <Nav.Link eventKey="attend">Attend</Nav.Link>
               </Nav.Item>
@@ -127,11 +107,11 @@ function RSVP() {
                 <Nav.Link eventKey="decline">Decline</Nav.Link>
               </Nav.Item>
             </Nav>
-            {isViewing ? (
+            {weddingContext.isViewing ? (
               <Button
                 variant="light"
                 style={closeButton}
-                onClick={handleClickClose}>
+                onClick={weddingContext.handleClickClose}>
                 &times;
               </Button>
             ) : null}
@@ -156,7 +136,7 @@ function RSVP() {
                 </Form.Control.Feedback>
               </Form.Group>
 
-              {activeKey === "attend" ? (
+              {weddingContext.activeKey === "attend" ? (
                 <Form.Group>
                   <Form.Label>Phone Number(s)</Form.Label>
                   <Form.Control
@@ -184,17 +164,18 @@ function RSVP() {
               </Form.Group>
 
               {/* special dietary requirments--> */}
-              {activeKey === "attend" ? (
+              {weddingContext.activeKey === "attend" ? (
                 <Form.Group>
                   <Form.Check
                     type="switch"
                     id="custom-switch"
                     label="I have special dietary requirments"
-                    onClick={handleChecked}
+                    onClick={weddingContext.handleChecked}
                   />
                 </Form.Group>
               ) : null}
-              {activeKey === "attend" && isHasDietReq ? (
+              {weddingContext.activeKey === "attend" &&
+              weddingContext.isHasDietReq ? (
                 <Form.Group>
                   <Form.Control
                     as="textarea"

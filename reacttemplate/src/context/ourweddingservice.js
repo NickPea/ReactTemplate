@@ -31,9 +31,31 @@ export function OurWeddingService(props) {
     setactiveTab(tabEventKey);
   };
 
+  //toast state triggered when RVSP component form is submited
+  //and closed with 'x' close button clicked on toast
   const [isShowToast, setisShowToast] = useState(false);
   const changeShowToast = change => {
     setisShowToast(change);
+  };
+
+  //toggles diet requirements input on check in RVSP component
+  const [isHasDietReq, setisHasDietReq] = useState(false);
+  const handleChecked = e => setisHasDietReq(e.target.checked);
+  //switches attned and decline tab in RSVP component
+  const [activeKey, setactiveKey] = useState("attend");
+  const handleSelect = e => {
+    setactiveKey(e);
+    setisHasDietReq(false);
+  };
+  //activates a react-spring effect on RSVP component
+  //when the component is clicked, and provides a
+  //handler for a 'x' close button to remove the effect
+  const [isViewing, setIsViewing] = useState(false);
+  const handleClickOpen = () => setIsViewing(true);
+  const handleClickClose = e => {
+    setIsViewing(false);
+    setisHasDietReq(false);
+    e.stopPropagation();
   };
 
   return (
@@ -45,7 +67,14 @@ export function OurWeddingService(props) {
           activeTab,
           changeActiveTab,
           isShowToast,
-          changeShowToast
+          changeShowToast,
+          isViewing,
+          handleClickOpen,
+          handleClickClose,
+          isHasDietReq,
+          handleChecked,
+          activeKey,
+          handleSelect
         }}>
         {props.children}
       </OurWeddingContext.Provider>
